@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "f345c331-1dfd-4d7e-953f-de78a27b7887",
+		"name": "GoPatikaProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/product/?page=1&pageSize=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\":\"Cep Telefonu\",\r\n    \"description\":\"Garip urun\",\r\n    \"name\":\"Ayfon49\",\r\n    \"sku\":444331\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/product/signed/addSingle",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"product",
+								"signed",
+								"addSingle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Bulk",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImV4cCI6MTY1MDA2MjM0MCwiaWF0IjoxNjQ5OTc1OTQwLCJpc3MiOiIiLCJyb2xlcyI6dHJ1ZSwidXNlcklkIjoxfQ.Qh5VgzGaLF942_MRpRSdS3twiUJpP2-T02XQ0386MME",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Tole/Desktop/Calisma/bitirme-projesi-gcamlicali/Docs/Products.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/product/signed/addBulk",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"product",
+								"signed",
+								"addBulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImV4cCI6MTY1MDExNzIwMSwiaWF0IjoxNjUwMDMwODAxLCJpc3MiOiIiLCJyb2xlcyI6dHJ1ZSwidXNlcklkIjoxfQ.m7oUlyJYWUXr1SM8UIRoXe8aeeRGZv-yzdKOjZOk7oA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"patates\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/product/signed/1000001",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"product",
+								"signed",
+								"1000001"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImV4cCI6MTY1MDExNzIwMSwiaWF0IjoxNjUwMDMwODAxLCJpc3MiOiIiLCJyb2xlcyI6dHJ1ZSwidXNlcklkIjoxfQ.m7oUlyJYWUXr1SM8UIRoXe8aeeRGZv-yzdKOjZOk7oA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/product/signed/13000001",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"product",
+								"signed",
+								"13000001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/product/name/iphone",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"product",
+								"name",
+								"iphone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By SKU",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"deneme@deneme.com\",\r\n    \"firstName\": \"adim\",\r\n    \"lastName\": \"soyadim\",\r\n    \"password\": \"12345\",\r\n    \"userName\": \"gereksiz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/signup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/user/signin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add Bulk",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWV0QGNpdmNpdi5jb20iLCJleHAiOjE2NTAxNDA3NDYsImlhdCI6MTY1MDA1NDM0NiwiaXNzIjoiIiwicm9sZXMiOmZhbHNlLCJ1c2VySWQiOjJ9.XoZftf5csWSq3hgJVvHWvm68Xodw3H9fCsePYyZKNiU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Tole/Desktop/Calisma/bitirme-projesi-gcamlicali/Docs/Catergories.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/category/signed/addBulk",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"category",
+								"signed",
+								"addBulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/category",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImV4cCI6MTY0OTg4MTE4NSwiaWF0IjoxNjQ5Nzk0Nzg1LCJpc3MiOiIiLCJyb2xlcyI6dHJ1ZSwidXNlcklkIjoxfQ.2xHCdbd5SlwA3whC8qVRPoYG40LOfRqcf0oueL2ncWo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Utu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/category/signed/addSingle",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"category",
+								"signed",
+								"addSingle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "[{\"key\":\"Authorization\",\"value\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImV4cCI6MTY0OTkzNTA3MSwiaWF0IjoxNjQ5ODQ4NjcxLCJpc3MiOiIiLCJyb2xlcyI6dHJ1ZSwidXNlcklkIjoxfQ.f2hfwctXQDS6VM4C4iWYbOjAWHtZhvNgsP5_EZ9y1EU\",\"description\":\"\",\"type\":\"text\",\"enabled\":true}]",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/cart/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cart",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cart/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cart",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImV4cCI6MTY1MDAyNTM5OSwiaWF0IjoxNjQ5OTM4OTk5LCJpc3MiOiIiLCJyb2xlcyI6dHJ1ZSwidXNlcklkIjoxfQ.mHtsH0tA_FC90dGyTf9Hwo_--_DBvgI6dLJvPFquTYM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/cart/3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cart",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/order/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/order/5",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"order",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
